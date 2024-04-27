@@ -1,0 +1,23 @@
+Réactions au format Onche:
+
+n'importe quoi -> :risitas_ahi:
+gros n'importe quoi -> :filwtf:
+génial -> :Jesus_tare:
+complot -> :selnat:
+bordel -> :Ahi_ent:
+déprimé -> :Pepe_cigarette:
+dégouté -> :deg:
+excellent -> :deuxbaffes:
+triste -> :kj_triste:
+très surpris -> :Surpris:
+impatient -> :Peut_etre:
+mort de rire -> :Crie:
+au revoir -> :risi8:
+peut-être -> :Mouais_Jesus:
+spectacle -> :Chat_nom:
+intéressant -> :moue:
+pas compris -> :risiperdu:
+
+Pour mettre en gras, entoure le texte de [b][/b]
+Pour souligner, entoure le texte de [center][/center]
+Pour mettre en italique, entoure le texte de [i][/i]
