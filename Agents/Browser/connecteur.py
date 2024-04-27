@@ -14,17 +14,14 @@ import os
 
 @dataclass
 class Connector:
-    profile: InitVar[str] = field(init=True, default="Onche")
     headless: InitVar[bool] = field(init=True, default=False)
-    base_url: InitVar[str] = field(init=True, default="https://onche.org/forum/1/blabla-general")
 
     _driver: Firefox = field(default_factory=Firefox)
+    _profile: Options = field(default_factory=Options)
 
-    def __post_init__(self, profile: str, headless: bool, base_url: str):
-        options = self.__set_option(headless)
-        self._driver = Firefox(options=options)
-        self._driver.get(base_url)
-        self.__load_profile(profile)
+    def __post_init__(self, headless: bool):
+        self._options = self.__set_option(headless)
+        self._driver = Firefox(options=self._options)
 
     # ----------- Check --------------
     @staticmethod
@@ -39,7 +36,7 @@ class Connector:
         options.add_argument('--disable-blink-features=AutomationControlled')
         return options
 
-    def __load_profile(self, profile: str) -> None:
+    def load_profile(self, profile: str) -> None:
         path_check = Path(f"/home/recitasse/Desktop/programmation/BotNewsOnche/Agents/Browser/profiles/{profile}.json")
         if not path_check.exists():
             FileNotFoundError(f"Le profile {profile} n'existe pas.")

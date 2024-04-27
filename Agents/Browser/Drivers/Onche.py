@@ -1,12 +1,12 @@
 from Agents.Browser.connecteur import Connector
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-from dataclasses import dataclass, field, InitVar
-
+from dataclasses import dataclass, field
+from typing import ClassVar
 
 @dataclass
 class Onche(Connector):
+    base_url: ClassVar[str] = field(default="https://onche.org/forum/1/blabla-general")
 
     def go_to_topic(self, url: int) -> None:
         """
@@ -43,7 +43,3 @@ class Onche(Connector):
     @staticmethod
     def __url_format(url: int | str) -> str:
         return f"https://onche.org/topic/{str(url)}"
-
-if __name__ == "__main__":
-    onche = Onche("Onche", False, "https://onche.org/forum/1/blabla-general")
-    onche.post_message(513672, "t'as bien raison")
