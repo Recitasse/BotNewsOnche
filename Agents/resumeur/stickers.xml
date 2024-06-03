@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<stickers>
+    <facts>
+        <sticker name=":moue:"/>
+        <sticker name=":PatrickJaneTea:"/>
+        <sticker name=":risibo:"/>
+        <sticker name=":Lunette:"/>
+    </facts>
+    <neg>
+        <sticker name=":pogfish:"/>
+        <sticker name=":etchebest_poing:"/>
+        <sticker name=":Lapidation:"/>
+        <sticker name=":enerve:"/>
+    </neg>
+    <pos>
+        <sticker name=":Onche_eco_cafe:"/>
+        <sticker name=":onche_ondulay:"/>
+        <sticker name=":DanceParty:"/>
+    </pos>
+</stickers>

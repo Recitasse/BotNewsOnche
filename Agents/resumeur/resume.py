@@ -12,8 +12,9 @@ class Resumeur:
     def resume(self, sentences, words, ratio: float) -> str:
         sentence_vectors = []
         for sentence in words:
-            sentence_vec = sum([self.model_.wv[word] for word in sentence]) / len(sentence)
-            sentence_vectors.append(sentence_vec)
+            if len(sentence) != 0:
+                sentence_vec = sum([self.model_.wv[word] for word in sentence]) / len(sentence)
+                sentence_vectors.append(sentence_vec)
 
         summary = summarize(" ".join(sentences), ratio=ratio, word_count=None, split=False)
 
