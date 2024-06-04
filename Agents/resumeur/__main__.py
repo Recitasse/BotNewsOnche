@@ -17,4 +17,4 @@ def main(url: str, split_: int = 2, ratio: float = 0.6) -> str:
 
 
 if __name__ == "__main__":
-    print(main("https://en.wikipedia.org/wiki/Artificial_intelligence", ratio=0.2))
+    print(main("https://ria.ru/20231222/pereimenovanie-1917364220.html", ratio=0.3, split_=5))
