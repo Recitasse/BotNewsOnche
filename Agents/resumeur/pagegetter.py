@@ -12,6 +12,7 @@ def translate(text: str) -> str:
 
     for text in slices:
         jm = GoogleTranslator(source=detect(text), target='fr').translate(text+".")
+        print(jm)
         glb += jm
     return glb
 
@@ -21,6 +22,7 @@ def extract_text(url):
     soup = BeautifulSoup(page.content, "html.parser")
 
     paragraphs = soup.find_all("p")
+    paragraphs += soup.find_all('div', class_='article__text')
     text = " ".join([p.get_text() for p in paragraphs])
 
     if detect(text) == "fr":

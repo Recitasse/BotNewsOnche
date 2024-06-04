@@ -40,14 +40,15 @@ def convert_sentiment_to_stickers(indexs: list) -> str:
     global_text = ""
     for i, ind in enumerate(indexs):
         if ind[1] == neuter:
-            global_text += f"{ind[0]} {random.choice([':Lire:', ':eril:', ':risijournal:']) if random.randrange(0, 5) == 2 else ''}"
+            val = random.choice(['\n:Lire:', '\n:eril:', '\n:risijournal:'])
+            global_text += f"{ind[0]} {val if random.randrange(0, 5) == 2 else ''}"
         else:
             if ind[1]['neu'] > 0.95:
-                global_text += f"{ind[0]} {get_random_sticker('facts')}"
+                global_text += f"{ind[0]}\n{get_random_sticker('facts')}"
             if ind[1]['neg'] > 0.1:
-                global_text += f"{ind[0]} {get_random_sticker('neg')}"
+                global_text += f"{ind[0]}\n{get_random_sticker('neg')}"
             if ind[1]['pos'] > 0.1:
-                global_text += f"{ind[0]} {get_random_sticker('pos')}"
+                global_text += f"{ind[0]}\n{get_random_sticker('pos')}"
         if i % 5 == 0:
             global_text += "\n\t"
     return global_text
